@@ -1,0 +1,291 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f1faee !important;
+}
+html, body {
+    height: 100%;  
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+
+  .portfolio,
+  main {
+    flex: 1;  padding-bottom: 50px;
+    overflow-y: auto; 
+  }
+.header {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1d3557;
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 20px;
+}
+
+.header nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.header nav ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header nav ul li a {
+  text-decoration: none;
+  color: #fff;padding:10px 15px;
+}
+
+.header nav ul li a:hover,
+.header nav ul li a.active {
+  background-color: #f36f7a;
+  border: 1px solid #f36f7a;
+  border-radius: 10px;
+  
+  transition: background 0.3s ease-in-out;
+}
+
+.portfolio {
+  margin: 20px;
+}
+
+/* About page */
+#projects h2,
+#contact h2,
+main #about h2 {
+  text-align: left;
+  text-transform: capitalize;
+  font-style: italic;
+}
+
+main #about .about-info {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px rgba(255, 255, 255, 0.7);
+  background: #f0f0f0;
+}
+
+main #about .about-info img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    opacity 0.5s ease-in;
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main #about .about-info img:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+main #about .about-summary {
+  padding: 15px;
+  max-width: 60%;
+}
+
+main #about .about-summary h5 a,
+main #about .about-summary h5 {
+  font-weight: bold;
+  line-height: 28px;
+  font-size: 18px;
+  color: #000;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+main #about .about-summary p {
+  font-size: 16px;
+  color: #000;
+}
+
+main #about .about-list {
+  margin: 20px 10px;
+  color: #f36f7a;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+main #about .about-list .item {
+  background-color: #f36f7a;
+  color: #fff;
+  padding: 20px;
+  min-height: 200px; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  border-radius: 10px;
+}
+
+/* Project */
+#projects .portfolio-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#projects .portfolio-details .portfolio-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 30px 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
+    -5px -5px 15px rgba(255, 255, 255, 0.7);
+  background: #f0f0f0;
+}
+
+#projects .portfolio-details .portfolio-info img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+#projects .portfolio-details .portfolio-info .portfolio-summary {
+  flex: 1;
+}
+
+#projects .portfolio-details .portfolio-info .portfolio-summary h5 a,
+#projects .portfolio-details .portfolio-info .portfolio-summary h5 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #1d3557;
+  text-transform: capitalize;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  line-height: 28px;
+}
+
+#projects .portfolio-details .portfolio-info .portfolio-summary h5 a:hover {
+  color: #e63946;
+}
+
+#projects .portfolio-details .portfolio-info .portfolio-summary p {
+  font-size: 16px;
+  color: #000;
+  line-height: 24px;
+}
+
+/* Contact */
+#contact form {
+  border-radius: 10px;
+  margin: 0px auto;
+  border: 1px solid #ccc;
+  margin: 20px;
+  padding: 20px;
+}
+
+#contact form .form-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+#contact form .form-group label {
+  display: flex;
+  margin-top: 5px;
+}
+
+#contact form .form-group label input,
+#contact form .form-group textarea,
+#contact form .form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+#contact form .form-group label.radiolabel input{
+  margin-right: 5px;
+}
+#contact form .form-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+  }
+
+#contact form .form-buttons button:nth-child(1) {
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  background-color: #ccc;
+  margin: 10px 10px 10px 0px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+#contact form .form-buttons button:nth-child(2) {
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    background-color: #1d3557;
+    margin: 10px 10px 10px 0px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+
+#contact form .form-buttons button:nth-child(2):hover {
+    background-color: #f36f7a;
+}
+#contact form .form-group input:focus,#contact form .form-group textarea:focus {
+    border-color: rgb(243, 111, 122);
+    box-shadow: 0px 0px 8px rgba(243, 111, 122, 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+}
+footer {
+    text-align: center;
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: #f8f9fa;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
